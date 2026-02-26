@@ -2,7 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button";
-import { featuredWork } from "./featured-work";
+import { featuredWork } from "./data";
 
 const FeaturedWork = () => {
 

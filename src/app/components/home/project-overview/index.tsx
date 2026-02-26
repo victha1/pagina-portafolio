@@ -1,25 +1,11 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { caseStudies } from "./data";
+import { sideProjects } from "./data";
 
 const ProjectOverview = () => {
-    const [projectData, setProjectData] = useState<any>(null);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await fetch('/api/page-data')
-                if (!res.ok) throw new Error('Failed to fetch')
-                const data = await res.json()
-                setProjectData(data?.projectOverview)
-            } catch (error) {
-                console.error('Error fetching services:', error)
-            }
-        }
-
-        fetchData()
-    }, [])
     return (
         <section>
             <div className="container">
@@ -28,7 +14,7 @@ const ProjectOverview = () => {
                         <div className="flex flex-col xs:flex-row items-start gap-5 xs:gap-10 md:gap-28 lg:gap-5">
                             <p className="max-w-fit lg:max-w-2xs w-full text-sm tracking-[2px] text-primary uppercase font-medium">Case studies</p>
                             <div className="flex flex-col gap-2.5">
-                                {projectData?.caseStudies?.map((value: any, index: any) => {
+                                {caseStudies?.map((value: any, index: any) => {
                                     return (
                                         <Link key={index} href={value?.url} className="group flex items-center gap-2">
                                             <h4>{value?.name}</h4>
@@ -42,7 +28,7 @@ const ProjectOverview = () => {
                         <div className="flex flex-col xs:flex-row items-start gap-5 xs:gap-10 md:gap-28 lg:gap-5">
                             <p className="max-w-fit lg:max-w-2xs w-full text-sm tracking-[2px] text-primary uppercase font-medium">Side Projects</p>
                             <div className="flex flex-col gap-2.5">
-                                {projectData?.sideProjects?.map((value: any, index: any) => {
+                                {sideProjects?.map((value: any, index: any) => {
                                     const isComingSoon = value?.comingSoon;
 
                                     const content = (

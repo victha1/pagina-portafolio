@@ -1,6 +1,4 @@
-import { NextResponse } from "next/server";
-
-const featureWork = [
+export const featuredWork = [
     {
         title: "Branding + Web Design for Cleaning Services",
         description: "Developed a modern brand identity and a responsive web experience tailored for a professional cleaning company, focused on clarity and usability.",
@@ -14,9 +12,3 @@ const featureWork = [
         image: "/images/feature-work/feature-img-2.png"
     }
 ]
-
-export const GET = async () => {
-    return NextResponse.json({
-        featureWork
-    });
-};
