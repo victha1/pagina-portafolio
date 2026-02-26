@@ -1,26 +1,10 @@
 "use client";
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { featuredWork } from "./featured-work";
 
 const FeaturedWork = () => {
-    const [featureWork, setFeatureWork] = useState<any>(null);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await fetch('/api/featured-work')
-                if (!res.ok) throw new Error('Failed to fetch')
-                const data = await res.json()
-                setFeatureWork(data?.featureWork)
-            } catch (error) {
-                console.error('Error fetching services:', error)
-            }
-        }
-
-        fetchData()
-    }, [])
 
     return (
         <section>
@@ -37,7 +21,7 @@ const FeaturedWork = () => {
                         </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 border-t border-primary/10">
-                        {featureWork?.map((value: any, index: number) => {
+                        {featuredWork?.map((value: any, index: number) => {
                             const isRightCol = index % 2 === 1;
 
                             return (
