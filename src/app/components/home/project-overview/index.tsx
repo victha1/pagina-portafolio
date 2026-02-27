@@ -18,7 +18,7 @@ const ProjectOverview = () => {
                                     return (
                                         <Link key={index} href={value?.url} className="group flex items-center gap-2">
                                             <h4>{value?.name}</h4>
-                                            <Image src={"/images/icon/tile-arrow-icon.svg"} alt="tile-icon" width={24} height={24} className="group-hover:translate-x-1.5 group-hover:rotate-45 transition-all duration-300 ease-in" />
+                                            <Image src={"/pagina-portafolio/images/icon/tile-arrow-icon.svg"} alt="tile-icon" width={24} height={24} className="group-hover:translate-x-1.5 group-hover:rotate-45 transition-all duration-300 ease-in" />
                                         </Link>
                                     )
                                 })}
@@ -38,7 +38,7 @@ const ProjectOverview = () => {
                                             </h4>
                                             {!isComingSoon ? (
                                                 <Image
-                                                    src={"/images/icon/tile-arrow-icon.svg"}
+                                                    src={"/pagina-portafolio/images/icon/tile-arrow-icon.svg"}
                                                     alt="tile-icon"
                                                     width={24}
                                                     height={24}
